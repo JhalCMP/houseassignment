@@ -381,23 +381,22 @@
   <div id="divAffordabilityCalc">
     <h1>Affordability</h1>
     Home Price
-    <input type="range" min="0" max="1500000" value="560000" step="10" id="rngHomePrice" oninput="calculateMortgage();">
-    <p id="txtHomePrice"></p>
-    <input id="txtHomePrice" type="number">
+    <input type="range" min="0" max="1500000" value="560000" step="10" id="rngHomePrice"
+      oninput="calculateMortgageRNG();">
+    <input id="txtHomePrice" type="number" min="0" max="1500000" value="560000" step="10"
+      oninput="calculateMortgageTXT();">
   </div>
   <div>
     Down Payment
-    <input type="range" min="0" max="30" value="20" step="1" id="rngDownPayment" oninput="calculateMortgage();">
-    <p id="txtDownPaymentValue"></p>
-    <p id="txtDownPayment"></p>
-    <input id="txtDownPayment" type="number">
-    <input id="txtDownPaymentValue" type="number">
+    <input type="range" min="0" max="30" value="20" step="1" id="rngDownPayment" oninput="calculateMortgageRNG();">
+    <input id="txtDownPayment" type="number" min="0" max="30" value="20" step="1" oninput="calculateMortgageTXT();">
+    <input id="txtDownPaymentValue" type="text" enabled="false">
   </div>
   <div>
     Interest Rate
-    <input type="range" min="0" max="6.5" value="6.30" step=".1" id="rngInterestRate" oninput="calculateMortgage();">
-    <p id="txtInterestRate"></p>
-    <input id="txtInterestRate" type="number" min="0" max="6.5" value="6.30" step=".1">
+    <input type="range" min="0" max="6.5" value="6.30" step=".1" id="rngInterestRate" oninput="calculateMortgageRNG();">
+    <input id="txtInterestRate" type="number" min="0" max="6.5" value="6.30" step=".1"
+      oninput="calculateMortgageTXT();">
   </div>
   <div>
     Loan Type
@@ -410,18 +409,29 @@
   </div>
   </div>
   <script>
-    function calculateMortgage() {
+    function calculateMortgageRNG() {
       let mortgage = document.getElementById("rngHomePrice").value - (document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
       let interest = document.getElementById("rngInterestRate").value / 12;
       let principal = mortgage * (interest * (1 + interest) * 360) / ((1 + interest) * 360 - 1);
-      document.getElementById("monthlyPayment").innerHTML = "$" + Math.round(principal / 12) + "/month";
-      document.getElementById("txtHomePrice").innerHTML = "$" + document.getElementById("rngHomePrice").value;
-      document.getElementById("txtDownPayment").innerHTML = document.getElementById("rngDownPayment").value + "%";
-      document.getElementById("txtDownPaymentValue").innerHTML = "$" + Math.round(document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
-      document.getElementById("txtInterestRate").innerHTML = document.getElementById("rngInterestRate").value + "%";
+      document.getElementById("monthlyPayment").value = Math.round(principal / 12) + "/month";
+      document.getElementById("txtHomePrice").innerHTML = document.getElementById("rngHomePrice").value;
+      document.getElementById("txtDownPayment").innerHTML = document.getElementById("rngDownPayment").value;
+      document.getElementById("txtDownPaymentValue").innerHTML = Math.round(document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
+      document.getElementById("txtInterestRate").innerHTML = document.getElementById("rngInterestRate").value;
     }
 
-    calculateMortgage(); getElementById
+    function calculateMortgageTXT() {
+      let mortgage = document.getElementById("txtHomePrice").value - (document.getElementById("txtHomePrice").value * document.getElementById("txtDownPayment").value / 100);
+      let interest = document.getElementById("txtInterestRate").value / 12;
+      let principal = mortgage * (interest * (1 + interest) * 360) / ((1 + interest) * 360 - 1);
+      document.getElementById("monthlyPayment").value = Math.round(principal / 12) + "/month";
+      document.getElementById("rngHomePrice").innerHTML = document.getElementById("txtHomePrice").value;
+      document.getElementById("rngDownPayment").innerHTML = document.getElementById("txtDownPayment").value;
+      document.getElementById("rngDownPaymentValue").innerHTML = Math.round(document.getElementById("txtHomePrice").value * document.getElementById("txtDownPayment").value / 100);
+      document.getElementById("rngInterestRate").innerHTML = document.getElementById("txtInterestRate").value;
+    }
+
+    calculateMortgageRNG();
 
     function changeMap() {
       document.getElementById("googleMap").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.3282841674495!2d-80.17527058385927!3d42.05758226214069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88327ea44e8a8441%3A0xb79816dd8d9ad31e!2s4242%20Asbury%20Rd%2C%20Erie%2C%20PA%2016506!5e0!3m2!1sen!2sus!4v1672773601785!5m2!1sen!2sus&type=school";
