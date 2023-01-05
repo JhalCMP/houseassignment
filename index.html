@@ -383,17 +383,21 @@
     Home Price
     <input type="range" min="0" max="1500000" value="560000" step="10" id="rngHomePrice" oninput="calculateMortgage();">
     <p id="txtHomePrice"></p>
+    <input id="txtHomePrice" type="number">
   </div>
   <div>
     Down Payment
     <input type="range" min="0" max="30" value="20" step="1" id="rngDownPayment" oninput="calculateMortgage();">
     <p id="txtDownPaymentValue"></p>
     <p id="txtDownPayment"></p>
+    <input id="txtDownPayment" type="number">
+    <input id="txtDownPaymentValue" type="number">
   </div>
   <div>
     Interest Rate
     <input type="range" min="0" max="6.5" value="6.30" step=".1" id="rngInterestRate" oninput="calculateMortgage();">
     <p id="txtInterestRate"></p>
+    <input id="txtInterestRate" type="number" min="0" max="6.5" value="6.30" step=".1">
   </div>
   <div>
     Loan Type
