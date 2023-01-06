@@ -10,9 +10,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>House Assignment</title>
-  <link rel="stylesheet" href="RealEstate.css">
+  <link rel="stylesheet" href="css/RealEstate.css">
   <style>
-    /* DO NOT DELETE NEEDED FOR SLIDESHOW TO WORK */
     .mySlides {
       display: none;
     }
@@ -21,7 +20,27 @@
       display: none;
     }
 
-    /* DO NOT DELETE NEEDED FOR SLIDESHOW TO WORK */
+    /* Next / Previous Buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /*   moves the right arrow, Move later BLISS */
+    .next {
+      padding-left: 100px;
+    }
   </style>
 
 <body>
@@ -29,20 +48,82 @@
   <div>
     <img class="Start" onclick="showSlides(1)" src="images/01.jpg" alt="4242 Asbury Rd">
     <!-- SlideShow Container -->
-    <!--Slideshow container should be changed durring styling to open up differently-->
 
     <div class="slideshow">
 
       <!-- First Slide -->
       <div class="mySlides fade">
-        <div class="numbertext">1</div>
         <img src="images/02.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/03.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/04.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/05.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/06.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/07.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/08.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/09.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/10.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/11.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/12.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/13.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/14.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/15.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/16.jpg" style="width:100%">
       </div>
       <!-- To add more just make a new div like above, changing the numbertext text -->
 
     </div>
   </div>
+  <!-- Arrows -->
+  <a class="prev" onclick="addSlide(-1)">&#10094;</a>
+  <a class="next" onclick="addSlide(1)">&#10095;</a>
+  </div>
+  <br>
+  <!-- Idk Why there is a break here I'm assuming its important tho -->
+
+  <div id="divAddressInfoLeft">
+    <h1>4242 Asbury Rd</h1>
+    <h4>Erie, PA 16506</h4>
+    <div><img src="images/BedIcon.svg" alt="Bed"> 4 Beds</div>
+    <div><img src="images/BathIcon.svg" alt="Bath"> 3 Baths</div>
+    <div><img src="images/square-feet.svg" alt="Sqft"> 3,184 sqft (on 4.63 acres)</div>
+  </div>
+
+  <div id="divAddressInfoRight">
+    <h1>$560,000</h1>
+    <h4>$629,000</h4>
+    <h4>Est. Mortgage $3,729/mo*</h4>
+  </div>
+
   <div id="divLocalInfo">
+    <h1>Local Information</h1>
     <div id="divLocalButtons">
       <button id="btnMap">Map</button>
       <button id="btnSchools">Schools</button>
@@ -70,233 +151,459 @@
       </thead>
       <tbody>
         <tr>
-          <td> <i class="fa-duotone fa-circle-parking"></i> Parking</td>
-          <th> <strong></strong> 2 Car Garage</th>
-          <td>HOA</td>
+          <td> <img src="images/parking.svg" alt="Parking"> Parking</td>
+          <th> 2 Car Garage</th>
+          <td> <img src="images/hoa-fee.svg" alt="HOA"> HOA</td>
           <th>None</th>
         </tr>
         <tr>
-          <td>Outdoor</td>
+          <td> <img src="images/outdoor.svg" alt="Outdoor"> Outdoor</td>
           <th>No Info</th>
-          <td>Price/Sqft</td>
+          <td> <img src="images/square-feet.svg" alt="Price/Sqft"> Price/Sqft</td>
           <th>$176</th>
         </tr>
         <tr>
-          <td>A/C</td>
-          <th>Heating Only</th>
-          <td>Listed</td>
+          <td> <img src="images/heating.svg" alt="A/C"> Heating Only A/C</td>
+          <th></th>
+          <td> <img src="images/days-on-market.svg" alt="Listed"> Listed</td>
           <th>2 days ago</th>
         </tr>
       </tbody>
       <table>
   </div>
+
   <div id="divHomeDetails">
-    <h2>Home Details for 4242 Asbury Rd</h2>
-    <table id="tblInteriorFeatures">
-      <thead>Interior Features</thead>
-      <div id="divInteriorDetails">
-        <h3>Interior Details</h3>
-        <ul>
-          <li>Basement: Finished, Partial</li>
-        </ul>
-      </div>
-      <div id="divBeds&Baths">
-        <h3>Beds & Baths</h3>
-        <ul>
-          <li>Number of Bedrooms: 4</li>
-          <li>Number of Bathroom (half): 3</li>
-          <li>Number of Bathrooms: 3 </li>
-          <li>Number of Bathrooms(full): 2 </li>
-        </ul>
-      </div>
-      <div id="divDimensions&Layout">
-        <ul>
-          <li>Living Area: 3184 Square Feet</li>
-        </ul>
-      </div>
-      <div id="divAppliances&Utilities">
-        <h3>Appliances & Utilities</h3>
-        <ul>
-          <li>Appliances: Gas Water Heater</li>
-        </ul>
-      </div>
-      <div id="divHeating&Cooling">
-        <h3>Heating & Cooling</h3>
-        <ul>
-          <li>Heating: Forced Air</li>
-          <li>Has Heating</li>
-          <li>Heating Fuel: Forced Air</li>
-        </ul>
-      </div>
-      <div id="divFireplace&Spa">
-        <h3>Fireplace & Spa</h3>
-        <ul>
-          <li>Number of Fireplaces: 1</li>
-          <li>Fireplace: Wood Burning</li>
-          <li>Has a Fireplace</li>
-        </ul>
-      </div>
-      <div id="divWindowsDoorsFloors&Walls">
-        <h3>Flooring: Ceramic, Laminate, Vinyl</h3>
-        <ul>
-          <li>Flooring: Ceramic, Laminate, Vinyl</li>
-        </ul>
-      </div>
-      <div id="divLevelsEntrance&Accessibility">
-        <ul>
-          <li>Stories: 2</li>
-          <li>Levels: Twos</li>
-          <li>Floors: Ceramic, Laminate, Vinyl</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblExteriorFeatures">
-      <thead>Exterior Features</thead>
-      <div id="divExteriorFeatures">
-        <h3>Exterior Home Features</h3>
-        <ul>
-          <li>Roof: Asphalt</li>
-        </ul>
-      </div>
-      <div id="diveParking&Garage">
-        <h3>Parking & Garage</h3>
-        <ul>
-          <li>Number of Garage Spaces: 2</li>
-          <li>Number of Covered Sapces: 2</li>
-          <li>No Carport</li>
-          <li>Has a Garage</li>
-          <li>Has an Attached Garage</li>
-          <li>Parking: Attached</li>
-        </ul>
-      </div>
-      <div id="divWater&Sewer">
-        <h3>Water & Sewer</h3>
-        <ul>
-          <li>Sewer: Public Sewer</li>
-        </ul>
-      </div>
-      <div id="divFarm&Range">
-        <h3>Farm & Range</h3>
-        <ul>
-          <li>Frontage Length: 315</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblDaysOnMarket">
-      <thead>Days on Market</thead>
-      <div id="divDaysOnMarket">
-        <ul>
-          <li>Days on Market: 21</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblPropertyInformation">
-      <thead>Property Information</thead>
-      <div id="divYearBuilt">
-        <h3>Year Built</h3>
-        <ul>
-          <li>Year Built: 1900</li>
-        </ul>
-      </div>
-      <div id="divPropertyType/Style">
-        <h3>Property Type / Style</h3>
-        <ul>
-          <li>Property Type: Residential</li>
-          <li>Property Subtype: Single Family Residence</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblPriceAndStatus">
-      <thead>Price & Status</thead>
-      <div id="divPrice">
-        <h3>Price</h3>
-        <ul>
-          <li>List Price: $560,000</li>
-          <li>Price Per Sqft: $176</li>
-        </ul>
-      </div>
-      <div id="divStatusChange&Dates">
-        <h3>Status Change & Dates</h3>
-        <ul>
-          <li>Possession Timg: Close of Escrow</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblActiveStatus">
-      <thead>Active Status</thead>
-      <div id="divActiveStatus">
-        <ul>
-          <li>MLS Status: Active</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblLocation">
-      <thead>Location</thead>
-      <div id="divDirection&Address">
-        <h3>Direction & Address</h3>
-        <ul>
-          <li>City: Erie</li>
-        </ul>
-      </div>
-      <div id="divSchoolInformation">
-        <h3>School Information</h3>
-        <ul>
-          <li>Elementary School District: Millcreek</li>
-          <li>Jr High / Middle School Disctrict: Millcreek</li>
-          <li>Hight School District: Millcreek</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblAgentInfo">
-      <thead>Agent Information</thead>
-      <div id="divListingAgent">
-        <h3>Listing Agent</h3>
-        <ul>
-          <li>MLS/Source ID: 166513</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblBuilding">
-      <thead>Building</thead>
-      <div id="divBuildingArea">
-        <h3>Building Area</h3>
-        <ul>
-          <li>Bulding Area: 3184 Square Feet</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblLotInfo">
-      <thead>Lot Information</thead>
-      <div id="lotArea">
-        <ul>
-          <li>Lot Area: 4.63 Acres</li>
-        </ul>
-      </div>
-    </table>
-    <table id="tblCompensation">
-      <thead>Compensation</thead>
-      <div id="divBuyerAgency">
-        <ul>
-          <li>Buyer Agency Commision: 2.5</li>
-          <li>Buyer Agency Commision Type: %</li>
-        </ul>
-      </div>
-      <div id="divNotes">
-        <h3>Notes</h3>
-        <p>The listing broker's offer of compensation is made only to participants of the MLS where the listing is filed
-        </p>
-      </div>
-    </table>
-    <table id="tblMiscellaneous">
-      <thead>Miscellaneous</thead>
-      <div id="divMisc">
-        <ul>
-          <li>Basement</li>
-          <li>Municipality: Millcreek Township</li>
-        </ul>
-      </div>
-    </table>
+    <div id="divInteriorFeatures" class="">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th> <img src="images/interior-features.svg" alt="Interior Features"> Interior Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Interior Details</th>
+            <td>
+              <span>
+                • Basement: Finished, Partial
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Bed's & Baths</th>
+            <td>
+              <span>
+                • Number of Bedrooms: 4
+              </span>
+              <span>
+                • Number of Bathrooms: 3
+              </span>
+              <span>
+                • Number of Bathrooms (full): 2
+              </span>
+              <span>
+                • Number of Bathrooms (half): 1
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Dimensions and Layout</th>
+            <td>
+              <span>
+                • Living Area: 3184 Square Feet
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Appliances & Utilities</th>
+            <td>
+              <span>
+                • Appliances: Gas Water Heater
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Heating & Cooling</th>
+            <td>
+              <span>
+                • Heating: Forced Air
+              </span>
+              <span>
+                • Has Heating
+              </span>
+              <span>
+                • Heating Fuel: Forced Air
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Fireplace & Spa</th>
+            <td>
+              <span>
+                • Number of Fireplaces: 1
+              </span>
+              <span>
+                • Fireplace: Wood Burning
+              </span>
+              <span>
+                • Has a Fireplace
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Windows, Doors, Floors, & Walls</th>
+            <td>
+              <span>
+                • Flooring: Ceramic, Laminate, Vinyl
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Levels, Entrance, & Accessibility</th>
+            <td>
+              <span>
+                • Stories: 2
+              </span>
+              <span>
+                • Levels: Two
+              </span>
+              <span>
+                • Floors: Ceramic, Laminate, Vinyl
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divExteriorFeatures">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Exterior Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Exterior Home Features</th>
+            <td>
+              <span>
+                • Roof: Asphalt
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Parking & Garage</th>
+            <td>
+              <span>
+                • Number of Garage Spaces: 2
+              </span>
+              <span>
+                • Number of Covered Spaces: 2
+              </span>
+              <span>
+                • No Carport
+              </span>
+              <span>
+                • Has a Garage
+              </span>
+              <span>
+                • Has an Attached Garage
+              </span>
+              <span>
+                • Parking: Attached
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Water & Sewer</th>
+            <td>
+              <span>
+                • Sewer: Public Sewer
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Farm & Range</th>
+            <td>
+              <span>
+                • Frontage Length: 315
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divDaysOnMarket">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Days on Market</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span>
+                • Days on Market: 23
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divPropertyInformation">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Property Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Year Built</th>
+            <td>
+              <span>
+                • Year Built: 1900
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Property Type / Style</th>
+            <td>
+              <span>
+                • Property Type: Residential
+              </span>
+              <span>
+                • Property Subtype: Single Family Residence
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Building</th>
+            <td>
+              <span>
+                • Building: Approximate
+              </span>
+              <span>
+                • Construction Materials: Frame
+              </span>
+              <span>
+                • Does Not Include Home Warranty
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Property Information</th>
+            <td>
+              <span>
+                • Parcel Number: 33090374.2006.00
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divPrice&Status">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Price & Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Price</th>
+            <td>
+              <span>
+                • List Price: $560,000
+              </span>
+              <span>
+                • Price Per Sqft: $176
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Status Change & Dates</th>
+            <td>
+              <span>
+                • Possession Timing: Close of Escrow
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divActiveStatus">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Active Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span>
+                • MLS Status: Active
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divLocation">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Direction & Address
+            <th>
+            <td>
+              <span>
+                • City: Erie
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>School Information</th>
+            <td>
+              <span>
+                • Elementary School District: Millcreek
+              </span>
+              <span>
+                • Jr High / Middle School District: Millcreek
+              </span>
+              <span>
+                • High School District: Millcreek
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divAgentInformation">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Agent Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Listing Agent</th>
+            <td>
+              <span>
+                • MLS/Source ID: 166513
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divBuilding">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Building</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Building Area</th>
+            <td>
+              <span>
+                • Building Area: 3184 Square Feet
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divLotInformation">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Lot Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span>
+                • Lot Area: 4.63 Acres
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divCompensation">
+      <table class="tblHomeDetails">
+        <thead>
+          <tr>
+            <th>Compensation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span>
+                • Buyer Agency Commission: 2.5
+              </span>
+              <span>
+                • Buyer Agency Commission Type: %
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>Notes</th>
+            <td>
+              <span>
+                The listing broker's offer of compensation is made only to participants of the MLS where the listing is
+                filed
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="divMiscellaneous">
+      <table class="tblHomeDetails">
+        <tr>
+          <th>Miscellaneous</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span>
+                • Basement
+              </span>
+              <span>
+                • Municipality: Millcreek Township
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
 
   <div id="divSimilarHomes">
     <h1>Similar Homes You May Like</h1>
@@ -304,13 +611,13 @@
       <div>
         <div class="imageContainer">
           <p>6.19 ACRES</p>
-          <img src="./images/Junk.PNG">
+          <img src="./images/SimilarHome1.webp">
         </div>
         <ul>
-          <h3>$825,000</h3>
-          <li>4bd 5ba 3,484 sqft...</li>
-          <li>7425 Edinboro Rd,</li>
-          <li>Erie, PA 16509</li>
+          <h3>$549,000</h3>
+          <li>5bd 4ba 3,810 sqft...</li>
+          <li>5895 Forest Xing,</li>
+          <li>Erie, PA 16506</li>
         </ul>
       </div>
 
@@ -318,19 +625,7 @@
         <div class="imageContainer">
           <p>3D VIEW</p>
           <p>0.5 ACRES</p>
-          <img src="./images/Junk.PNG" alt="">
-        </div>
-        <ul>
-          <h3>$549,000</h3>
-          <li>4bd 4ba 2,434 sqft...</li>
-          <li>5895 Forest Xing,</li>
-          <li>Erie, PA 16506</li>
-        </ul>
-      </div>
-      <div>
-        <div class="imageContainer">
-          <p>0.34 ACRES</p>
-          <img src="./images/Junk.PNG" alt="">
+          <img src="./images/SimilarHome2.webp" alt="">
         </div>
         <ul>
           <h3>$499,900</h3>
@@ -341,8 +636,20 @@
       </div>
       <div>
         <div class="imageContainer">
+          <p>0.34 ACRES</p>
+          <img src="./images/SimilarHome3.webp" alt="">
+        </div>
+        <ul>
+          <h3>$309,000</h3>
+          <li>3bd 4ba 2,176 sqft...</li>
+          <li>3930 Hershey Rd,</li>
+          <li>Erie, PA 16506</li>
+        </ul>
+      </div>
+      <div>
+        <div class="imageContainer">
           <p>NEW CONSTRUCTION</p>
-          <img src="./images/Junk.PNG" alt="">
+          <img src="./images/SimilarHome4.webp" alt="">
         </div>
         <ul>
           <h3>$679,900</h3>
@@ -383,20 +690,20 @@
     Home Price
     <input type="range" min="0" max="1500000" value="560000" step="10" id="rngHomePrice"
       oninput="calculateMortgageRNG();">
-    <input id="txtHomePrice" type="number" min="0" max="1500000" value="560000" step="10"
+    $<input id="txtHomePrice" type="number" min="0" max="1500000" value="560000" step="10"
       oninput="calculateMortgageTXT();">
   </div>
   <div>
     Down Payment
     <input type="range" min="0" max="30" value="20" step="1" id="rngDownPayment" oninput="calculateMortgageRNG();">
-    <input id="txtDownPayment" type="number" min="0" max="30" value="20" step="1" oninput="calculateMortgageTXT();">
-    <input id="txtDownPaymentValue" type="text" enabled="false">
+    <input id="txtDownPayment" type="number" min="0" max="30" value="20" step="1" oninput="calculateMortgageTXT();">%
+    $<input id="txtDownPaymentValue" type="text" readonly>
   </div>
   <div>
     Interest Rate
     <input type="range" min="0" max="6.5" value="6.30" step=".1" id="rngInterestRate" oninput="calculateMortgageRNG();">
     <input id="txtInterestRate" type="number" min="0" max="6.5" value="6.30" step=".1"
-      oninput="calculateMortgageTXT();">
+      oninput="calculateMortgageTXT();">%
   </div>
   <div>
     Loan Type
@@ -413,32 +720,43 @@
       let mortgage = document.getElementById("rngHomePrice").value - (document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
       let interest = document.getElementById("rngInterestRate").value / 12;
       let principal = mortgage * (interest * (1 + interest) * 360) / ((1 + interest) * 360 - 1);
-      document.getElementById("monthlyPayment").value = Math.round(principal / 12) + "/month";
-      document.getElementById("txtHomePrice").innerHTML = document.getElementById("rngHomePrice").value;
-      document.getElementById("txtDownPayment").innerHTML = document.getElementById("rngDownPayment").value;
-      document.getElementById("txtDownPaymentValue").innerHTML = Math.round(document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
-      document.getElementById("txtInterestRate").innerHTML = document.getElementById("rngInterestRate").value;
+      document.getElementById("monthlyPayment").innerHTML = "$" + Math.round(principal / 12) + "/month";
+      document.getElementById("txtHomePrice").value = document.getElementById("rngHomePrice").value;
+      document.getElementById("txtDownPayment").value = document.getElementById("rngDownPayment").value;
+      document.getElementById("txtDownPaymentValue").value = Math.round(document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
+      document.getElementById("txtInterestRate").value = document.getElementById("rngInterestRate").value;
     }
 
     function calculateMortgageTXT() {
       let mortgage = document.getElementById("txtHomePrice").value - (document.getElementById("txtHomePrice").value * document.getElementById("txtDownPayment").value / 100);
       let interest = document.getElementById("txtInterestRate").value / 12;
       let principal = mortgage * (interest * (1 + interest) * 360) / ((1 + interest) * 360 - 1);
-      document.getElementById("monthlyPayment").value = Math.round(principal / 12) + "/month";
-      document.getElementById("rngHomePrice").innerHTML = document.getElementById("txtHomePrice").value;
-      document.getElementById("rngDownPayment").innerHTML = document.getElementById("txtDownPayment").value;
-      document.getElementById("rngDownPaymentValue").innerHTML = Math.round(document.getElementById("txtHomePrice").value * document.getElementById("txtDownPayment").value / 100);
-      document.getElementById("rngInterestRate").innerHTML = document.getElementById("txtInterestRate").value;
+      document.getElementById("monthlyPayment").innerHTML = "$" + Math.round(principal / 12) + "/month";
+      document.getElementById("rngHomePrice").value = document.getElementById("txtHomePrice").value;
+      document.getElementById("rngDownPayment").value = document.getElementById("txtDownPayment").value;
+      document.getElementById("txtDownPaymentValue").value = Math.round(document.getElementById("rngHomePrice").value * document.getElementById("rngDownPayment").value / 100);
+      document.getElementById("rngInterestRate").value = document.getElementById("txtInterestRate").value;
     }
 
     calculateMortgageRNG();
 
-    function changeMap() {
-      document.getElementById("googleMap").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.3282841674495!2d-80.17527058385927!3d42.05758226214069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88327ea44e8a8441%3A0xb79816dd8d9ad31e!2s4242%20Asbury%20Rd%2C%20Erie%2C%20PA%2016506!5e0!3m2!1sen!2sus!4v1672773601785!5m2!1sen!2sus&type=school";
-      //document.getElementById("googleMap").src = 
-      //document.getElementById("googleMap").src = 
+    function changeMap(url) {
+      document.getElementById("googleMap").src = url;
     }
 
+    document.getElementById("btnMap").addEventListener("click", function () {
+      changeMap("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.3282841674495!2d-80.17527058385927!3d42.05758226214069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88327ea44e8a8441%3A0xb79816dd8d9ad31e!2s4242%20Asbury%20Rd%2C%20Erie%2C%20PA%2016506!5e0!3m2!1sen!2sus!4v1672773601785!5m2!1sen!2sus&type=school");
+    });
+
+    document.getElementById("btnSchools").addEventListener("click", function () {
+      changeMap("https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11849.30948676287!2d-80.18183665103753!3d42.05760182336705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sschools!5e0!3m2!1sen!2sus!4v1673024635155!5m2!1sen!2sus");
+    });
+
+    document.getElementById("btnShop").addEventListener("click", function () {
+      changeMap("https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d47397.18271392191!2d-80.20810115408607!3d42.0576758270878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sshop%20%26%20eat!5e0!3m2!1sen!2sus!4v1673024703584!5m2!1sen!2sus");
+    });
+
+    id = ""
     //Slideshow Script
     let n = 1;
 
@@ -452,8 +770,6 @@
       showSlides(slideNumber = n);
     }
 
-
-
     function showSlides(n) {
       let i;
       let slides = document.getElementsByClassName("mySlides");
@@ -466,10 +782,12 @@
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
+
       show[0].style.display = "block";
       slides[slideNumber - 1].style.display = "block";
       starter[0].className += " active";
-
+      // Table Styling
+      table
     }
   </script>
 

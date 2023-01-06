@@ -1,1 +1,91 @@
 @charset "utf-8";
+
+html, body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 1em;
+}
+
+/* Slideshow */
+.mySlides {
+	display: none;
+}
+
+.slideshow {
+	display: none;
+}
+
+#mainContainer {
+	margin: auto;
+	width: 100%;
+	max-width: 1000px;
+}
+
+#divLocalButtons {
+	display: flex;
+	gap: 0.75em;
+	align-items: center;
+	margin-top: 0.3em;
+	margin-bottom: 0.5em;
+}
+
+#Description p {
+	width: 55%;
+	text-align: justify;
+}
+
+#HomeHighlights table th {
+	font-size: 24px;
+	text-align: left;
+	padding-bottom: 0.5em;
+}
+
+#HomeHighlights table {
+	padding:0.5em;
+	border: 1px solid lightgray;
+	border-radius: 0.5em;
+	width: 100%;
+}
+
+button {
+	background-color: rgb(236, 236, 236);
+	border: 1px solid transparent;
+	border-radius: 0.25em;
+	color: black ;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: rgb(245, 245, 245);
+}
+
+#divhomesList {
+	display: flex;
+	width: 100%;
+}
+
+#divhomesList > div {
+	flex: 1 1 0px;
+}
+
+#tbl {
+	padding:0.5em;
+	border: 1px solid lightgray;
+	border-radius: 1em;
+	width: 100%;
+	border-collapse:collapse;
+}
+
+#tbl > tbody > tr > td:first-child {
+	background-color: rgb(236, 236, 236);
+	font-weight: bold;
+}
+
+#tbl td {
+	border: 1px solid lightgray;
+	padding: .5em;
+}
