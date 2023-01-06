@@ -18,6 +18,11 @@
 
     .slideshow {
       display: none;
+      position: absolute;
+      z-index: 9;
+      background-color: #f1f1f1;
+      text-align: center;
+      border: 1px solid #d3d3d3;
     }
 
     /* Next / Previous Buttons */
@@ -42,6 +47,7 @@
       padding-left: 100px;
     }
   </style>
+</head>
 
 <body>
   <!-- SlideShow Is Here! -->
@@ -52,49 +58,49 @@
     <div class="slideshow">
 
       <!-- First Slide -->
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/02.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/03.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/04.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/05.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/06.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/07.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/08.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/09.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/10.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/11.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/12.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/13.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides onclick="awayWithYou()"">
         <img src="images/14.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/15.jpg" style="width:100%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides" onclick="awayWithYou()">
         <img src="images/16.jpg" style="width:100%">
       </div>
       <!-- To add more just make a new div like above, changing the numbertext text -->
@@ -169,7 +175,7 @@
           <th>2 days ago</th>
         </tr>
       </tbody>
-      <table>
+    </table>
   </div>
 
   <div id="divHomeDetails">
@@ -615,9 +621,11 @@
         </div>
         <ul>
           <h3>$549,000</h3>
-          <li>5bd 4ba 3,810 sqft...</li>
+          <li> <img src="images/BedIcon.svg" alt="Bed"> 5bd <img src="images/BathIcon.svg" alt="Bed"> 4ba <img
+              src="images/square-feet.svg" alt="Bed"> 3,810 sqft...</li>
           <li>5895 Forest Xing,</li>
           <li>Erie, PA 16506</li>
+          <p>HOWARD HANNA ERIE SOUTHWEST, GEMLS</p>
         </ul>
       </div>
 
@@ -629,9 +637,11 @@
         </div>
         <ul>
           <h3>$499,900</h3>
-          <li>5bd 4ba 3,810 sqft...</li>
+          <li> <img src="images/BedIcon.svg" alt="Bed"> 5bd <img src="images/BathIcon.svg" alt="Bed"> 4ba <img
+              src="images/square-feet.svg" alt="Bed"> 3,810 sqft...</li>
           <li>5805 Pebblestone Ct,</li>
           <li>Erie, PA 16506</li>
+          <p>HOWARD HANNA ERIE SOUTHWEST, GEMLS</p>
         </ul>
       </div>
       <div>
@@ -641,9 +651,11 @@
         </div>
         <ul>
           <h3>$309,000</h3>
-          <li>3bd 4ba 2,176 sqft...</li>
+          <li> <img src="images/BedIcon.svg" alt="Bed"> 3bd <img src="images/BathIcon.svg" alt="Bed"> 4ba <img
+              src="images/square-feet.svg" alt="Bed"> 2,176 sqft...</li>
           <li>3930 Hershey Rd,</li>
           <li>Erie, PA 16506</li>
+          <p>MARSHA MARSH RES PEACH, GEMLS</p>
         </ul>
       </div>
       <div>
@@ -653,9 +665,11 @@
         </div>
         <ul>
           <h3>$679,900</h3>
-          <li>4bd 4ba 2,870 sqft...</li>
+          <li> <img src="images/BedIcon.svg" alt="Bed"> 4bd <img src="images/BathIcon.svg" alt="Bed"> 4ba <img
+              src="images/square-feet.svg" alt="Bed"> 2,870 sqft...</li>
           <li>4861 Hialeah Ct,</li>
           <li>Erie, Pa 16506</li>
+          <p>COLDWELL BANKER SELECT - AIRPORT, GEMLS</p>
         </ul>
       </div>
     </div>
@@ -687,33 +701,36 @@
 
   <div id="divAffordabilityCalc">
     <h1>Affordability</h1>
+    <h4>Calculate your monthly mortgage payments</h4>
     Home Price
     <input type="range" min="0" max="1500000" value="560000" step="10" id="rngHomePrice"
       oninput="calculateMortgageRNG();">
     $<input id="txtHomePrice" type="number" min="0" max="1500000" value="560000" step="10"
       oninput="calculateMortgageTXT();">
+    <div>
+      Down Payment
+      <input type="range" min="0" max="30" value="20" step="1" id="rngDownPayment" oninput="calculateMortgageRNG();">
+      <input id="txtDownPayment" type="number" min="0" max="30" value="20" step="1" oninput="calculateMortgageTXT();">%
+      $<input id="txtDownPaymentValue" type="text" readonly>
+    </div>
+    <div>
+      Interest Rate
+      <input type="range" min="0" max="6.5" value="6.30" step=".1" id="rngInterestRate"
+        oninput="calculateMortgageRNG();">
+      <input id="txtInterestRate" type="number" min="0" max="6.5" value="6.30" step=".1"
+        oninput="calculateMortgageTXT();">%
+    </div>
+    <div>
+      Loan Type
+      <select name="Loan Type" id="loanType">
+        <option>30-year fixed</option>
+      </select>
+    </div>
+    <div>
+      <h1 id="monthlyPayment"></h1>
+    </div>
   </div>
-  <div>
-    Down Payment
-    <input type="range" min="0" max="30" value="20" step="1" id="rngDownPayment" oninput="calculateMortgageRNG();">
-    <input id="txtDownPayment" type="number" min="0" max="30" value="20" step="1" oninput="calculateMortgageTXT();">%
-    $<input id="txtDownPaymentValue" type="text" readonly>
-  </div>
-  <div>
-    Interest Rate
-    <input type="range" min="0" max="6.5" value="6.30" step=".1" id="rngInterestRate" oninput="calculateMortgageRNG();">
-    <input id="txtInterestRate" type="number" min="0" max="6.5" value="6.30" step=".1"
-      oninput="calculateMortgageTXT();">%
-  </div>
-  <div>
-    Loan Type
-    <select name="Loan Type" id="loanType">
-      <option>30-year fixed</option>
-    </select>
-  </div>
-  <div>
-    <h1 id="monthlyPayment"></h1>
-  </div>
+
   </div>
   <script>
     function calculateMortgageRNG() {
@@ -757,6 +774,12 @@
     });
 
     id = ""
+    // Opening My Part -- Justin Man
+    let show = document.getElementsByClassName("slideshow");
+  // Make the slideshow container go bye bye
+  function awayWithYou(){
+    show[0].style.display = "none";
+  }
     //Slideshow Script
     let n = 1;
 
@@ -774,7 +797,6 @@
       let i;
       let slides = document.getElementsByClassName("mySlides");
       let starter = document.getElementsByClassName("Start");
-      let show = document.getElementsByClassName("slideshow");
 
       if (n > slides.length) {slideNumber = 1}
       if (n < 1) {slideNumber = slides.length}
